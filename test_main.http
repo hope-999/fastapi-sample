@@ -27,5 +27,4 @@ username=johndoe&password=secret
 ###
 
 GET http://127.0.0.1:9999/users/me
-Accept: application/json
 Authorization: Bearer johndoe
