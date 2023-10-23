@@ -25,6 +25,22 @@ Content-Type: application/x-www-form-urlencoded
 username=johndoe&password=secret
 
 ###
+POST http://127.0.0.1:9999/token
+Content-Type: application/x-www-form-urlencoded
 
+username=johndoe999&password=secret
+
+###
 GET http://127.0.0.1:9999/users/me
-Authorization: Bearer johndoe
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNjk3OTY3NDU2fQ.z4eKldnS37bTH79OEJgDvaP7DJKTAkZ03Lct6m1pJHo
+
+###
+GET http://127.0.0.1:9999/users/me
+
+###
+GET http://127.0.0.1:9999/users/me
+Authorization: Bearer johndoe111
+
+###
+GET http://127.0.0.1:9999/hello_world
+
