@@ -1,21 +1,17 @@
 import json
+import re
+from json import JSONDecodeError
 
-with open('cvm-pri.txt', 'r') as f:
+with open('无映射-工作表1.csv', 'r') as f:
     contents = f.readlines()
 
-# print(contents)
+result_list = []
 
-for content in contents:
-    content = json.loads(content)
-    # print(f'content={content}')
-    # print(content[0]['paramValue'])
-    for i in content:
-        # print(i)
-        # print(i.get('paramValue'))
-        param_value = i.get('paramValue')
-
-        if param_value and isinstance(param_value, str) and param_value.startswith('http://sh-lb'):
-            print(param_value)
-        else:
-            pass
-            # print(f'错误：{param_value}\n')
+with open('cvm-replace-1026-eo_aat_collection_scene_case_api.sql', 'w') as f:
+    for content in contents:
+        # result = re.findall(r'http?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+', content)
+        content = content.split(',')[:2]
+        # print(content)
+        sql_str = f"UPDATE eo_aat_collection_scene_case_api SET caseData = REPLACE ( caseData, '{content[0]}', '{content[1]}');\n"
+        print(sql_str)
+        f.write(sql_str)

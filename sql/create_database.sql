@@ -1,0 +1,1 @@
+CREATE DATABASE IF NOT EXISTS sql_app default charset utf8mb4;
