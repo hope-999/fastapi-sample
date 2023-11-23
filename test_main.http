@@ -44,3 +44,15 @@ Authorization: Bearer johndoe111
 ###
 GET http://127.0.0.1:9999/hello_world
 
+###
+GET http://127.0.0.1:9999/users/
+
+###
+POST http://127.0.0.1:9999/users/
+Content-Type: application/json
+
+{
+    "email": "",
+    "password": ""
+}
+
