@@ -7,7 +7,10 @@ GET http://127.0.0.1:9999/
 Accept: application/json
 
 ###
+GET http://127.0.0.1:9999/items/
+Accept: application/json
 
+###
 GET http://127.0.0.1:9999/hello/User
 Accept: application/json
 
@@ -55,4 +58,8 @@ Content-Type: application/json
     "email": "",
     "password": ""
 }
+
+###
+POST http://127.0.0.1:9999/send-notification/123456.qq.com?q=iambigman
+Content-Type: application/json
 
