@@ -63,3 +63,14 @@ Content-Type: application/json
 POST http://127.0.0.1:9999/send-notification/123456.qq.com?q=iambigman
 Content-Type: application/json
 
+###
+GET http://127.0.0.1:9999/query-checker/
+
+
+###
+GET http://127.0.0.1:9999/api/v1/app
+
+
+###
+GET http://127.0.0.1:9999/items/666
+
