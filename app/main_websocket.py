@@ -90,3 +90,15 @@ async def websocket_endpoint(
         if q is not None:
             await websocket.send_text(f"Query parameter q is: {q}")
         await websocket.send_text(f"Message text was: {data}, for item ID: {item_id}")
+
+
+@app.get("/main_websocket")
+async def read_main():
+    return {"msg": "Hello World"}
+
+
+@app.websocket("/test_ws")
+async def websocket(websocket: WebSocket):
+    await websocket.accept()
+    await websocket.send_json({"msg": "Hello WebSocket"})
+    await websocket.close()
